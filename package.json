@@ -9,7 +9,9 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "nodemon": "nodemon ./server/server.js"
+    "nodemon": "nodemon ./server/server.js",
+    "fake-places": "node ./database/fakePlaces.js",
+    "fake-todos": "node ./database/fakeTodos.js"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

@@ -7,7 +7,7 @@ class Places extends React.Component {
   render() {
     return (
       <div>
-
+        
       </div>
     )
   }
