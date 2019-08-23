@@ -1,4 +1,5 @@
 import React from 'react';
+import Places from './Places.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -7,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        test message
+        <Places/>
       </div>
     )
   }
