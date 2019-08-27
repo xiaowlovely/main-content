@@ -3,8 +3,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.jsx$/],
-        exclude: /node_modules/,
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: [/\.(js|jsx)$/],
         use: {
           loader: 'babel-loader',
           options: {

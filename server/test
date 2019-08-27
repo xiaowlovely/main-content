@@ -1,0 +1,9 @@
+// const $ = require('jquery');
+// const server = require('./server.js');
+// describe('test for api call on places',()=>{
+//   $.get('./api/place', data => {
+//     test("get request on api '/api/place' is not undefined", ()=>{
+//       expect(data).not.ToBeUndefined;
+//     });
+//   })
+// });
