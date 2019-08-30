@@ -1,6 +1,9 @@
 import React from 'react';
 import PlacesEntry from './PlacesEntry.jsx';
 import $ from 'jquery';
+import SVG from 'react-inlinesvg';
+import leftArrow from '../assets/left-arrow.svg'
+import rightArrow from '../assets/right-arrow.svg'
 import '../../dist/style.scss';
 class Places extends React.Component {
   constructor(props) {
@@ -51,7 +54,7 @@ class Places extends React.Component {
     return (
       <div className="places">
         <div className='title'>More places to stay</div>
-        {this.state.index > 0 ? <div className="arrow arrow-left" onClick={this.moveLeft}></div> : <span></span>}
+        {this.state.index > 0 ? <SVG className="arrow arrow-left" src={leftArrow} onClick={this.moveLeft}></SVG> : <span></span>}
         <div className='col'>
           <div className={`slider active-slide-${this.state.index}`}>
             <div className='wrapper' style={{
@@ -65,7 +68,7 @@ class Places extends React.Component {
             </div>
           </div>
         </div>
-        {this.state.index < 8 ? <div className="arrow arrow-right" onClick={this.moveRight}></div> : <div></div>}
+        {this.state.index < 8 ? <SVG className="arrow arrow-right" src={rightArrow}  onClick={this.moveRight}></SVG> : <span></span>}
       </div>
     )
   }
