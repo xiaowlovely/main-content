@@ -1,5 +1,8 @@
 import React from 'react';
-import todosEntry from './todosEntry.jsx';
+import TodosEntry from './todosEntry.jsx';
+import SVG from 'react-inlinesvg';
+import leftArrow from '../assets/left-arrow.svg'
+import rightArrow from '../assets/right-arrow.svg'
 import $ from 'jquery';
 import '../../dist/style.scss';
 class Todos extends React.Component {
@@ -50,22 +53,22 @@ class Todos extends React.Component {
   render() {
     return (
       <div className="todos">
-        <div className='title'>More todos to stay</div>
-        {this.state.index > 0 ? <div className="arrow arrow-left" onClick={this.moveLeft}></div> : <span></span>}
+        <div className='title'>Things to do nearby</div>
+        {this.state.index > 0 ? <SVG className="arrow arrow-left" src={leftArrow} onClick={this.moveLeft}></SVG> : <span></span>}
         <div className='col'>
           <div className={`slider active-slide-${this.state.index}`}>
             <div className='wrapper' style={{
-                  'transform': `translateX(-${this.state.index*(100/3)}%)`
+                  'transform': `translateX(-${this.state.index*(100/5)}%)`
                 }}>
               {this.state.todos.map((obj) => {
                 return (
-                  <todosEntry key={obj.todo_id} todo={obj} />
+                  <TodosEntry key={obj.todo_id} todo={obj} />
                 )
               })}
             </div>
           </div>
         </div>
-        {this.state.index < 8 ? <div className="arrow arrow-right" onClick={this.moveRight}></div> : <div></div>}
+        {this.state.index < 8 ? <SVG className="arrow arrow-right" src={rightArrow}  onClick={this.moveRight}></SVG> : <span></span>}
       </div>
     )
   }

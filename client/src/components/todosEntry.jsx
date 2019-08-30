@@ -1,7 +1,8 @@
 import React from 'react';
 import Like from '../assets/like.svg';
+import star from '../assets/star-shape-rounded.svg';
 import SVG from 'react-inlinesvg';
-class todosEntry extends React.Component{
+class TodosEntry extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -14,13 +15,19 @@ class todosEntry extends React.Component{
       <div className='todo'>
       <img src={this.state.todo.imageUrl} id='pic'></img>
       <SVG src={Like} id='like'></SVG>
-      <div>{this.state.todo.kind} {this.state.todo.location}</div>
-      <div >{this.state.todo.description}</div>
-      <div>${this.state.todo.price}/night</div>
-      <div>{this.state.todo.rating} Stars</div>
+      <div className='kind'>{this.state.todo.kind} 
+      {this.state.todo.location}</div>
+      <div className='description'>{this.state.todo.description}</div>
+      <div className='price'>From ${this.state.todo.price}/person</div>
+      <div className='review'>
+        <SVG src={star} id='star'></SVG>
+      <div className='text'>
+        {this.state.todo.review}
+      </div>
+      </div>
     </div>
     )
   }
 }
 
-export default todosEntry;
+export default TodosEntry;

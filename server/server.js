@@ -26,7 +26,7 @@ app.get('/api/place', (req, res) => {
 
 app.get('/api/todo', (req, res) => {
   const arrSelect = [];
-  while (arrSelect.length < 12) {
+  while (arrSelect.length < 20) {
     const randomIndex = Math.round(Math.random() * 100);
     if (arrSelect.indexOf(randomIndex) === -1) {
       arrSelect.push(randomIndex);

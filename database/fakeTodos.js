@@ -4,11 +4,12 @@ const db = require('./database.js')
 const createFakeTodos = (imageUrl) => {
   const result = {};
   result.imageUrl = imageUrl;
-  result.liked = Math.round(Math.random());
+  result.liked = 0;
   result.description = faker.lorem.sentence();
   result.kind = faker.commerce.department();
   result.price = faker.commerce.price();
-  result.rating = Math.round(Math.random() * 5);
+  result.rating = Math.round(Math.random() * 5 * 10) / 10;
+  result.review =  Math.round(Math.random() * 500);
   return result;
 }
 
