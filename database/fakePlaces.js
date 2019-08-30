@@ -1,20 +1,22 @@
 const faker = require('faker');
-const db = require('./database.js')
+const db = require('./database.js');
+const request = require('request');
 
-const createFakePlaces = () => {
+const createFakePlaces = (imageUrl) => {
   const result = {};
-  result.imageUrl = faker.image.imageUrl();
-  result.liked = Math.round(Math.random());
+  result.imageUrl = imageUrl;
+  result.liked = 0;
   result.description = faker.lorem.sentence();
   result.location = faker.address.city();
   result.kind = faker.commerce.department();
   result.price = faker.commerce.price();
-  result.rating = Math.round(Math.random() * 5);
+  result.review = Math.floor(Math.random() * 1000);
+  result.rating = Math.floor(Math.random() * 5);
   return result;
 }
 
-const setFakePlaces = (table) => {
-  const newFakeData = createFakePlaces();
+const setFakePlaces = (imageUrl) => {
+  const newFakeData = createFakePlaces(imageUrl);
   db.query(`INSERT INTO places SET ?;`, newFakeData, (err) => {
     if (err) {
       console.log(err);
@@ -24,5 +26,7 @@ const setFakePlaces = (table) => {
 
 db.query("TRUNCATE TABLE places");
 for (let i = 0; i < 100; i++){
-  setFakePlaces();
+  let url = `https://nearbyimages.s3-us-west-1.amazonaws.com/${i}.jpg`
+  setFakePlaces(url);
+  console.log(i);
 }

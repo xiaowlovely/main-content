@@ -1,11 +1,18 @@
 import React from 'react';
+import PlacesEntry from './PlacesEntry.jsx';
 import $ from 'jquery';
+import '../../dist/style.scss';
 class Places extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      places: []
+      places: [],
+      index: 0,
+      direction: '',
+      key: ''
     }
+    this.moveRight = this.moveRight.bind(this);
+    this.moveLeft = this.moveLeft.bind(this);
   }
 
   componentDidMount() {
@@ -16,49 +23,49 @@ class Places extends React.Component {
     })
   }
 
+
+  moveRight() {
+    this.setState({
+      direction: 'right'
+    }, () => {
+      this.setState({
+        index: this.state.index + 1
+      })
+    }
+    )
+  }
+
+  moveLeft() {
+    this.setState({
+      direction: 'left'
+    }, () => {
+      this.setState({
+        index: this.state.index - 1
+      })
+    }
+    )
+  }
+
+
   render() {
     return (
-      <div id="switchcontrol" className="carousel slide" data-ride="carousel">
-        <div className="carousel-inner">
-          <div className='carousel-item active' id='places'>
-          {this.state.places.slice(0, 6).map((obj) => {
-              return (
-                <div>
-                  <img src={obj.imageUrl} className='pic'></img>
-                  <div>{obj.kind} {obj.location}</div>
-                  <div >{obj.description}</div>
-                  <div>From ${obj.price}/night</div>
-                  <div>{obj.rating} Stars</div>
-                </div>
-              )
-            })}
+      <div className="places">
+        <div className='title'>More places to stay</div>
+        {this.state.index > 0 ? <div className="arrow arrow-left" onClick={this.moveLeft}></div> : <span></span>}
+        <div className='col'>
+          <div className={`slider active-slide-${this.state.index}`}>
+            <div className='wrapper' style={{
+                  'transform': `translateX(-${this.state.index*(100/3)}%)`
+                }}>
+              {this.state.places.map((obj) => {
+                return (
+                  <PlacesEntry key={obj.place_id} place={obj} />
+                )
+              })}
             </div>
-          <div className='carousel-item' id='places'>
-            {this.state.places.slice(6, 12).map((obj) => {
-              return (
-                <div>
-                  <img src={obj.imageUrl} className='pic'></img>
-                  <div>{obj.kind} {obj.location}</div>
-                  <div >{obj.description}</div>
-                  <div>From ${obj.price}/night</div>
-                  <div>{obj.rating} Stars</div>
-                </div>
-
-              )
-            })}
           </div>
-
-          <a className="carousel-control-prev" href="#switchcontrol" role="button" data-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="sr-only">Previous</span>
-          </a>
-          <a className="carousel-control-next" href="#switchcontrol" role="button" data-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="sr-only">Next</span>
-          </a>
         </div>
-        <div className='places'>
-        </div>
+        {this.state.index < 8 ? <div className="arrow arrow-right" onClick={this.moveRight}></div> : <div></div>}
       </div>
     )
   }
