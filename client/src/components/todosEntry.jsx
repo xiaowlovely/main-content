@@ -22,7 +22,7 @@ class TodosEntry extends React.Component{
       <div className='review'>
         <SVG src={star} id='star'></SVG>
       <div className='text'>
-        {this.state.todo.review}
+        ({this.state.todo.review})
       </div>
       </div>
     </div>
