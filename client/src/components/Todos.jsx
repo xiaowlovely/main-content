@@ -1,5 +1,5 @@
 import React from 'react';
-import TodosEntry from './todosEntry.jsx';
+import TodosEntry from './TodosEntry.jsx';
 import SVG from 'react-inlinesvg';
 import leftArrow from '../assets/left-arrow.svg'
 import rightArrow from '../assets/right-arrow.svg'
