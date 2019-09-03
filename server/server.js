@@ -39,7 +39,6 @@ app.get('/api/todo', (req, res) => {
       res.sendStatus(400);
     }else{
       res.status(200).send(results);
-      console.log('sucess!');
     }
   })
 })
