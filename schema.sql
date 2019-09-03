@@ -9,7 +9,8 @@ CREATE TABLE IF NOT EXISTS places (
   kind VARCHAR(255) NOT NULL,
   location VARCHAR(255) NOT NULL,
   price INT NOT NULL,
-  rating FLOAT
+  rating FLOAT,
+  review INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS todos (
@@ -19,6 +20,7 @@ CREATE TABLE IF NOT EXISTS todos (
   description VARCHAR(255) NOT NULL,
   kind VARCHAR(255) NOT NULL,
   price INT NOT NULL,
-  rating FLOAT
+  rating FLOAT,
+  review INT NOT NULL
 );
 

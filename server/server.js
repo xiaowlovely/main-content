@@ -16,17 +16,17 @@ app.get('/api/place', (req, res) => {
   }
   db.query("SELECT * FROM places WHERE place_id in (?)", [arrSelect], (err, results) => {
     if (err){
-      console.log(err);
       res.sendStatus(400);
     }else{
       res.status(200).send(results);
+      console.log('sucess!')
     }
   })
 })
 
 app.get('/api/todo', (req, res) => {
   const arrSelect = [];
-  while (arrSelect.length < 12) {
+  while (arrSelect.length < 20) {
     const randomIndex = Math.round(Math.random() * 100);
     if (arrSelect.indexOf(randomIndex) === -1) {
       arrSelect.push(randomIndex);
@@ -40,6 +40,7 @@ app.get('/api/todo', (req, res) => {
       res.sendStatus(400);
     }else{
       res.status(200).send(results);
+      console.log('sucess!');
     }
   })
 })

@@ -11,25 +11,56 @@
     "react-dev": "webpack -d --watch",
     "nodemon": "nodemon ./server/server.js",
     "fake-places": "node ./database/fakePlaces.js",
-    "fake-todos": "node ./database/fakeTodos.js"
+    "fake-todos": "node ./database/fakeTodos.js",
+    "download-places": "node ./imagesPlaces/download.js",
+    "download-todos": "node ./imagesTodos/download.js",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "webpack": "^4.39.2",
+    "file-loader": "^4.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-css-modules": "^2.1.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7"
   },
   "dependencies": {
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "fs": "0.0.1-security",
     "jquery": "^3.4.1",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.19.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-inlinesvg": "^1.1.6",
+    "request": "^2.88.0",
+    "underscore": "^1.9.1"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./client/src/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules",
+      ".+\\.(svg|png|jpg)$": "identity-obj-proxy"
+    }
   }
 }
