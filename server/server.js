@@ -1,6 +1,12 @@
+const corsOptions = {
+  origin: 'http://localhost:5000',
+  optionsSuccessStatus: 200
+}
 const express = require('express');
 const app = express();
 const db = require('../database/database.js')
+const cors = require('cors');
+app.use(cors(corsOptions));
 app.use(express.static(__dirname + '/../client/dist'));
 app.use(express.urlencoded({ extended: true }));
 const port = 3000;

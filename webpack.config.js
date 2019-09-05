@@ -18,7 +18,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
+              publicPath: 'http://localhost:3000/'
             }
           }
         ]
@@ -37,6 +37,7 @@ module.exports = {
   },
    output: {
     filename: 'bundle.js',
-    path: __dirname + '/client/dist'
+    path: __dirname + '/client/dist',
+    publicPath: __dirname + '/client/dist'
   }
 };
