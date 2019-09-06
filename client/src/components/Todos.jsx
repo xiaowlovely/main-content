@@ -19,7 +19,7 @@ class Todos extends React.Component {
   }
 
   componentDidMount() {
-    $.get('./api/todo', data => {
+    $.get('http://ec2-34-213-74-31.us-west-2.compute.amazonaws.com:3000/api/todo', data => {
       this.setState({
         todos: data
       })

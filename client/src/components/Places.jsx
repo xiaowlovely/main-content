@@ -19,7 +19,7 @@ class Places extends React.Component {
   }
 
   componentDidMount() {
-    $.get('./api/place', data => {
+    $.get('http://ec2-34-213-74-31.us-west-2.compute.amazonaws.com:3000/api/place', data => {
       this.setState({
         places: data
       })
