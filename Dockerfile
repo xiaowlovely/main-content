@@ -9,4 +9,8 @@ COPY . /src/app
 RUN npm install
 
 EXPOSE 3000
-CMD [ "npm", "run", "nodemon" ]
+
+CMD [ "npm", "run", "start" ]
+CMD [ "npm", "run", "fake-places" ]
+CMD [ "npm", "run", "fake-todos" ]
+CMD [ "npm", "run", "react-dev" ]

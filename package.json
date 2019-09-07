@@ -9,7 +9,7 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
-    "nodemon": "nodemon ./server/server.js",
+    "start": "node ./server/server.js",
     "fake-places": "node ./database/fakePlaces.js",
     "fake-todos": "node ./database/fakeTodos.js",
     "download-places": "node ./imagesPlaces/download.js",
