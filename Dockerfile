@@ -8,11 +8,10 @@ COPY . /src/app
 
 RUN npm install
 
-RUN yarn global add nodemon
+RUN npm install -g nodemon
 
 EXPOSE 3000
-
+CMD [ "npm", "run", "nodemon" ]
 CMD [ "npm", "run", "fake-places" ]
 CMD [ "npm", "run", "fake-todos" ]
 CMD [ "npm", "run", "react-dev" ]
-CMD [ "npm", "run", "nodemon" ]
