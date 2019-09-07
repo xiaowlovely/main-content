@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6.11
 
 RUN mkdir -p /src/app
 
