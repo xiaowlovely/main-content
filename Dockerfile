@@ -10,6 +10,8 @@ RUN npm install -g nodemon
 
 RUN npm install -g webpack
 
+RUN npm install -g webpack-cli
+
 RUN npm install
 
 EXPOSE 3000
