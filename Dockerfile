@@ -8,6 +8,8 @@ COPY . /src/app
 
 RUN npm install
 
+RUN yarn global add nodemon
+
 EXPOSE 3000
 
 CMD [ "npm", "run", "fake-places" ]
