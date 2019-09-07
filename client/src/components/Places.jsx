@@ -54,7 +54,7 @@ class Places extends React.Component {
     return (
       <div className="places">
         <div className='title'>More places to stay</div>
-        {this.state.index > 0 ? <SVG className="arrow arrow-left" src={leftArrow} onClick={this.moveLeft}></SVG> : <span></span>}
+        {this.state.index > 0 ? <SVG className="arrow arrow-left" src='http://ec2-34-213-74-31.us-west-2.compute.amazonaws.com:3000/left-arrow.svg' onClick={this.moveLeft}></SVG> : <span></span>}
         <div className='col'>
           <div className={`slider active-slide-${this.state.index}`}>
             <div className='wrapper' style={{
@@ -68,7 +68,7 @@ class Places extends React.Component {
             </div>
           </div>
         </div>
-        {this.state.index < 8 ? <SVG className="arrow arrow-right" src={rightArrow}  onClick={this.moveRight}></SVG> : <span></span>}
+        {this.state.index < 8 ? <SVG className="arrow arrow-right" src='http://ec2-34-213-74-31.us-west-2.compute.amazonaws.com:3000/right-arrow.svg'  onClick={this.moveRight}></SVG> : <span></span>}
       </div>
     )
   }

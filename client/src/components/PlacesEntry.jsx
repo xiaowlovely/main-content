@@ -15,7 +15,7 @@ class PlacesEntry extends React.Component{
     return (
       <div className='place'>
       <img src={this.state.place.imageUrl} id='pic'></img>
-      <SVG src={Like} id='like'></SVG>
+      <SVG src='http://ec2-34-213-74-31.us-west-2.compute.amazonaws.com:3000/like.svg' id='like'></SVG>
       <div className='kind'>{this.state.place.kind} 
       <span aria-hidden="true"> · </span>
       {this.state.place.location}</div>
@@ -24,7 +24,7 @@ class PlacesEntry extends React.Component{
       <div className='review'>{_.range(0, this.state.place.rating + 1).map(
          num => {
           return (
-            <SVG src={star} id='star'></SVG>
+            <SVG src='http://ec2-34-213-74-31.us-west-2.compute.amazonaws.com:3000/star-shape-rounded.svg' id='star'></SVG>
           )
         }
       )
