@@ -6,9 +6,7 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN yarn install
-
-RUN yarn global add nodemon
+RUN npm install
 
 EXPOSE 3000
 
