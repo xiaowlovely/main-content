@@ -6,9 +6,11 @@ WORKDIR /src/app
 
 COPY . /src/app
 
-RUN npm install
-
 RUN npm install -g nodemon
+
+RUN npm install -g webpack
+
+RUN npm install
 
 EXPOSE 3000
 CMD [ "npm", "run", "nodemon" ]
