@@ -10,5 +10,3 @@ RUN npm install
 
 EXPOSE 3000
 CMD [ "npm", "run", "nodemon" ]
-CMD [ "npm", "run", "fake-places" ]
-CMD [ "npm", "run", "fake-todos" ]
